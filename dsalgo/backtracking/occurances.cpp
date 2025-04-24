@@ -2,7 +2,11 @@
 #include <vector>
 using namespace std;
 
-// First occurrence of target (returns -1 if not found)
+/**
+  todo: there is one more way to do it without using idx, try that from udemy
+  Time Complexity: O(n) (each element checked once).
+  Space Complexity: O(n) (only due to recursion_backtracking stack, no slicing).
+ */
 int firstOcc(const vector<int>& arr, int l, int idx, int target) {
     if (idx == l) {
         return -1;
@@ -15,7 +19,11 @@ int firstOcc(const vector<int>& arr, int l, int idx, int target) {
     }
 }
 
-// Last occurrence of target (returns -1 if not found)
+/*
+   todo: there is one more way to do it without using idx, try that from udemy
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+*/
 int lastOcc(const vector<int>& arr, int l, int idx, int target) {
     if (idx == l) {
         return -1;
@@ -32,10 +40,15 @@ int lastOcc(const vector<int>& arr, int l, int idx, int target) {
     }
 }
 
-// All occurrences of target (returns vector of indices)
+/*
+    Time Complexity: O(n)
+    Space Complexity: O(n + k)
+    n = length of input array (recursion_backtracking stack depth)
+    k = number of matches found (size of result list)
+*/
 vector<int> AllOcc(const vector<int>& arr, int l, int idx, int target, int fsf) {
     if (idx == l) {
-        return vector<int>(fsf); // Create vector with fsf elements
+        return vector<int>(fsf);
     }
 
     if (arr[idx] == target) {
