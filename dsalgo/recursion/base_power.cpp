@@ -35,7 +35,8 @@ int basePowerLog(int base, int power) {
     else {
         int halfOfPowerResult = basePowerLog(base, power / 2);
         int finalResult = halfOfPowerResult * halfOfPowerResult;
-        if(power % 2 != 0) finalResult *= base;
+        if(power&1) finalResult *= base;
+        //power&1 faster than power % 2, mostly compiler optimizes divide to bitwise
         return finalResult;
     }
 }
@@ -56,7 +57,7 @@ int main() {
     cin >> b; 
     cout << endl <<  "Enter a power: " << endl;
     cin >> p;
-    int res = basePower(b, p);
+    int res = basePowerLog(b, p);
     cout << endl << res << endl;
     return 0;
 }
