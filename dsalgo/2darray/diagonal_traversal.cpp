@@ -1,6 +1,15 @@
 #include<iostream>
 using namespace std;
+/**
+Time Complexity: O(n * m), where n is the number of rows and m is the number of columns.
 
+Space Complexity: The method uses a constant amount of extra space (variables i, j, k), regardless of the input size.
+
+The input array is not counted toward space complexity since it’s part of the input.
+
+Thus, the space complexity is O(1) (constant space).
+"""
+ */
 void diagonalTraverse(const vector<vector<int>> & matrix) { // & avoid copies, read only [const]
     int rows = matrix.size();
     int cols = matrix[0].size();
@@ -33,7 +42,7 @@ int main() {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             cout << "Enter element [" << i << "][" << j << "]: ";
-            if (!(cin >> matrix[i][j])) {
+            if (!(cin >> matrix[i][j])) { // Attempts to read an integer from standard input Inverts the result - becomes true if the extraction fails
                 throw runtime_error("Invalid input - expected integer");
             }
         }
