@@ -95,3 +95,24 @@ Iteration 3 (j=2):
 Final State:
 String restored to original: "abc"
  */
+
+void permutations(string s, int i) {
+        if(i == s.size() - 1) {
+                cout << s << endl;
+        }
+
+        for(int j = i;j<s.size();j++) {
+                swap(s[i], s[j]);
+                permutations(s, i+1);
+                swap(s[i], s[j]);
+        }
+}
+
+int main() {
+        cout << "Enter a string:" << endl;
+        string s;
+        cin >> s;
+        cout << "Permutations are below:" << endl;
+        permutations(s, 0);
+        return 0;
+}
