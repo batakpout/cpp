@@ -5,6 +5,8 @@ using namespace std;
 Time Complexity: O(2^n) (exponential, worst-case).
 
 Space Complexity: O(n) (linear, due to recursion depth).
+This can be optimized to O(n) time and O(n) space using dynamic programming (memoization or tabulation) 
+by storing results of subproblems to avoid recomputation. 
  */
 //assuming 4*N board with  4*1 tiles or 1*4
 int noOfWays(int n) {
