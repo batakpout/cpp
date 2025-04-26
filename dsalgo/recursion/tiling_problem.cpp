@@ -1,7 +1,11 @@
 #include<iostream>
 
 using namespace std;
+/**
+Time Complexity: O(2^n) (exponential, worst-case).
 
+Space Complexity: O(n) (linear, due to recursion depth).
+ */
 //assuming 4*N board with  4*1 tiles or 1*4
 int noOfWays(int n) {
 
