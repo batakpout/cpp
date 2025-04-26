@@ -9,6 +9,7 @@ vector<string> tens = {"", "Ten", "Twenty", "Thirty", "Forty", "Fifty",
                            "Sixty", "Seventy", "Eighty", "Ninety"};
 vector<string> scales = {"", " Thousand", " Million", " Billion", " Trillion"};
 
+//Runs in O(1) time (fixed operations, no loops dependent on input size).
 string convertLessThanOneThousand(int n) {
 
      string res;
@@ -36,6 +37,19 @@ string convertLessThanOneThousand(int n) {
    // "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
 }
 
+/**
+Processes the number in groups of 3 digits.
+Maximum number of chunks = 4 (since INT_MAX = 2,147,483,647 has 10 digits → ceil(10/3) = 4 chunks).
+For each chunk, it calls convertLessThanOneThousand() (O(1) and does concatenation (O(1) per chunk).
+Total Time Complexity = O(1) (since the number of chunks is constant for 32-bit integers).
+
+Predefined Arrays (units, teens, tens, scales):
+Occupy O(1) space (fixed-size lookup tables)
+Output String (result):
+
+Maximum length of the English words for INT_MAX is ~200 characters (e.g., "Two Billion One Hundred Forty Seven Million Four Hundred Eighty Three Thousand Six Hundred Forty Seven").
+Space Complexity = O(1) (bounded by fixed maximum output size).
+ */
 string numberToWords(int num) {
     if(num == 0) return "Zero";
 
