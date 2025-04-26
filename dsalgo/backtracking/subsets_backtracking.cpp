@@ -7,8 +7,9 @@ using namespace std;
   * creates a binary tree of recursion with 2ⁿ leaves (where n = strlen(input)).
   * Time complexity: O(n · 2ⁿ) , O(n) for printing and other for total recursive calls. 
   * Space complexity: 
-  Recursion Depth: O(n) (max depth of the call stack).
-  Output Storage: O(n) (the output buffer).
+   - The maximum depth of the recursion is when i reaches the end of the string (n characters long), so the recursion depth is O(n)
+   - Recursion Depth: O(n) (max depth of the call stack).
+   - Output Storage: O(n) (the output buffer).
 
   Total Space: O(n).
  */
