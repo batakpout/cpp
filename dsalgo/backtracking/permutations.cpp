@@ -94,6 +94,23 @@ Iteration 3 (j=2):
 
 Final State:
 String restored to original: "abc"
+
+Time Complexity: T(n)=n!×O(n) , O(n) for printing
+Space Complexity:
+
+You are passing s by value — not by reference. (important)
+(If you pass by value, C++ makes a copy of string s at each function call.)
+
+Each recursion level stores: One copy of string s (of size n)
+
+The recursive stack depth is at most n (since you go from i=0 to i=n-1).
+
+Thus: Stack depth = O(n)
+
+Each frame has a string of size O(n)
+
+Thus: Space complexity=𝑂(n * n)
+
  */
 
 void permutations(string s, int i) {
