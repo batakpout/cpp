@@ -8,15 +8,17 @@ Time-complexity:
 
     O(L^ N) 
     e.g for in L = abc i.e size 3 and input digits = 53 we have 3 ^ 2 calls i.e 9
-    can be O(L ^ N)
+    also each function call involves a string concatenation that takes O(N) time in the worst case
+    Therefore, the total time complexity is O(L^N * N)
 
 Space complexity:
-    Recursion Stack:
-        The maximum depth of recursion is N (length of digits).
-        We need to store all possible combinations. As calculated above, there can be up to 4^n combinations.
+    The total space complexity is the sum of these components:
 
-        So, the space complexity is O(4^n + n) which simplifies to O(4^n) since 4^n grows much faster than n.
+    Result storage: O(N * L^N) -- > L^N total with each of size N
+    Recursion stack: O(N^ 2) 
 
+    Since N × L^N grows much faster than N² for any L > 1, the dominant term is O(N × L^N).
+    Therefore, the space complexity is O(N × L^N).
 
  */
 unordered_map<char, string> mp = {
