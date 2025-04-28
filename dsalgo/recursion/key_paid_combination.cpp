@@ -1,6 +1,12 @@
 #include<iostream>
 #include<map>
 
+/*
+  TC: O (L ^ N) L-> max keypad combination , N is no of input digits
+The function ultimately returns a vector with up to 4^n combinations.
+Each combination has a length of n characters.
+So the output space is O(n × 4^n).
+*/
 using namespace std;
      map<char, string> mp = {
         {'0', ""},
