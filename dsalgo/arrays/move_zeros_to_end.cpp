@@ -7,7 +7,7 @@
 #include<iostream>
 using namespace std;
 
-//O()
+//O(N * N)
 void moveToZeroNaive(int nums [], int n) {
       for (int i = 0; i < n; ++i) {
             if (nums[i] == 0) {
