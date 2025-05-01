@@ -2,6 +2,7 @@
  * Remove item val from  array
  * return the number of remaining elements in nums without val.
  * O(n) time complexity
+ * Two Pointer technique
  */
 #include<iostream>
 using namespace std;
