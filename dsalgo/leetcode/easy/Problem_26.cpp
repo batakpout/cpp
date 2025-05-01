@@ -3,6 +3,7 @@
  * input sorted array
  * return the number of unique elements in nums.
  * O(n) time complexity
+ * Two Pointer technique
  */
 #include<iostream>
 using namespace std;
