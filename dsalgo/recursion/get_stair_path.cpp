@@ -20,15 +20,9 @@ using namespace std;
 
 vector<string> findStairPaths(int n) {
 
-    if(n == 0) {
-        vector<string> v;
-        v.push_back("");
-        return v;
-    }
-    if(n < 0) {
-        vector<string> v;
-        return v;
-    }
+    if(n == 0) return {""};
+    if(n < 0) return {};
+    
     vector<string> path1 = findStairPaths(n-1);
     vector<string> path2 = findStairPaths(n-2);
     vector<string> path3 = findStairPaths(n-3);
@@ -47,11 +41,39 @@ vector<string> findStairPaths(int n) {
 
 }
 
+/**
+ TC: O(n × T(n)) = O(n × 3ⁿ)
+Same as before — but avoids recomputation, so it's much faster in practice.
+for n = 25 above methods hangs but this works so bit faster than above
+ */
+vector<string> memoized(int n, unordered_map<int, vector<string>>& memo) {
+    if (n == 0) return {""}; 
+    if (n < 0) return {}; 
+    if (memo.count(n)) return memo[n]; //count check if key exists in map and return 1 else 0
+
+
+    vector<string> result;
+
+    for (string path : memoized(n - 1, memo)) {
+        result.push_back("1" + path);
+    }
+    for (string path : memoized(n - 2, memo)) {
+        result.push_back("2" + path);
+    }
+    for (string path : memoized(n - 3, memo)) {
+        result.push_back("3" + path);
+    }
+    memo[n] = result;
+    return result;
+}
+
 int main() {
     cout << "Enter number of stairs: ";
     int s;
     cin >> s;
-    vector<string> result = findStairPaths(s);
+    //vector<string> result = findStairPaths(s);
+    unordered_map<int, vector<string>> memo;
+    vector<string> result = memoized(s, memo);
     cout << "Ways to come down " << s << " stairs with 1 or 2 or 3 steps\n";
     for(const auto &s: result) {
         cout << s << endl;
