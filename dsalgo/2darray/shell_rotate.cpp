@@ -140,3 +140,21 @@ int main() {
 
     return 0;
 }
+
+/**
+ make1DFromShell: Time Complexity: O(m), where m is the number of elements in the shell.
+Space Complexity: O(m), as it creates a new 1D array of size m.
+
+rotate: Time Complexity: O(m), as it performs three reverses, each taking O(m/2) time.
+Space Complexity: O(1), as it operates in-place on the input array.
+
+makeShellFrom1D: Time Complexity: O(m), similar to make1DFromShell, as it iterates over the shell elements.
+Space Complexity: O(1), as it modifies the input 2D array in-place.
+
+shellRotate:
+Time Complexity: Dominated by the three methods it calls:make1DFromShell: O(m),rotate: O(m), makeShellFrom1D: O(m)
+Total: O(m) + O(m) + O(m) = O(m)
+
+Space Complexity:
+The main additional space is the 1D array of size m created in make1DFromShell. So, O(m)
+ */
