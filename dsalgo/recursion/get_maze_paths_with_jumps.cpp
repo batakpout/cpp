@@ -10,6 +10,7 @@ using namespace std;
 Approximate Time Complexity: The number of paths is exponential, roughly O(3^(n)) where n is the maximum of (dr - sr) and (dc - sc). 
 This is because at each step, there are up to 3 choices (H, V, D), and the depth is up to n.
 But since the step sizes vary, it's more precise to say it's exponential, possibly O(3^n) or higher.
+roughly O(3^n+m)
 Space Complexity: O(n^2) because:
 Depth: O(n).
 At each level, psf can be O(n).
