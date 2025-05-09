@@ -16,25 +16,16 @@ For an n × n n×n grid, the time complexity is O(4 ^n * square_root(n)).
 #include<iostream>
 using namespace std;
 
-vector<string> findMazePaths(int sr, int sc, int dr, int dc) {
+void findMazePaths(int sr, int sc, int dr, int dc, string psf) {
 
-     if (sr == dr && sc == dc) return {""};
+     if(sc > dc || sr > dr) return;
+     if (sr == dr && sc == dc) {
+        cout << psf << endl;
+        return;
+     }
 
-     vector <string> path1;   
-     vector <string> path2;   
-
-    if(sc < dc)  path1 = findMazePaths(sr, sc+1, dr, dc);
-    if(sr < dr)  path2 = findMazePaths(sr+1, sc, dr, dc);
-
-    vector<string> paths;
-    for(string s1: path1) {
-        paths.push_back("h" + s1);
-    } 
-
-    for(string s2: path2) {
-        paths.push_back("v" + s2);
-    } 
-    return paths;
+    findMazePaths(sr, sc+1, dr, dc, psf + "h1");
+    findMazePaths(sr+1, sc, dr, dc, psf + "v1");
 
 }
 
@@ -42,11 +33,7 @@ int main() {
     cout << "Enter grid size: ";
     int n;
     cin >> n;
-    vector<string> v = findMazePaths(1,1,n,n);
-    cout << "maze paths: " << endl;
-    for(int i=0;i<v.size();i++) {
-        cout << v[i] << endl;
-    }
+    findMazePaths(1,1,n,n,"");
     return 0;
 }
 /**

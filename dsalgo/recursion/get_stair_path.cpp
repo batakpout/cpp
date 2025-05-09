@@ -6,40 +6,25 @@
 At level n: 3ⁿ calls
 Thus, the total number of recursive calls is O(3ⁿ). Also O(n) for each string concatenation operation so
 O(3ⁿ * n)
-We also insert each string into a vector<string>, which is amortized constant time per insertion, so doesn’t change the asymptotic upper bound.
 
-Space Complexity:
-Number of strings: O(3ⁿ), Length of each string: O(n)
-Total memory used to store the result vector = O(n × 3ⁿ)
-O(n × 3ⁿ) — dominated by the size of the output (the number and length of all possible paths)
-Plus O(n) for the call stack, but that's negligible in comparison.
  */
 
 #include<iostream>
 using namespace std;
 int callCount = 0;
 
-vector<string> findStairPaths(int n) {
+void findStairPaths(int n, string psf) {
 
    callCount++; 
-    if(n == 0) return {""};
-    if(n < 0) return {};
+    if(n == 0) {
+        cout << psf << endl;
+        return;
+    }
+    if(n < 0) return;
     
-    vector<string> path1 = findStairPaths(n-1);
-    vector<string> path2 = findStairPaths(n-2);
-    vector<string> path3 = findStairPaths(n-3);
-
-    vector<string> result;
-    for(string c: path1) {
-        result.push_back("1" + c);
-    }
-    for(string c: path2) {
-        result.push_back("2" + c);
-    }
-    for(string c: path3) {
-        result.push_back("3" + c);
-    }
-    return result;
+    findStairPaths(n-1, psf + "1");
+    findStairPaths(n-2, psf + "2");
+    findStairPaths(n-3, psf + "3");
 
 }
 
@@ -50,7 +35,7 @@ for n = 25 above methods hangs but this method works
 for n = 25 only 76 function calls but for n = 30 hangs becoz
 the function is trying to build and return a vector of ~53 million strings, each of length ~10–30.
 That is very memory intensive and slow, because: You're dynamically allocating space for tens of millions of strings.You're doing millions of string concatenations like "1" + path, "2" + path, etc.
-The vector<string> returned for each subproblem gets copied and joined into even bigger vectors.alignas
+The vector<string> returned for each subproblem gets copied and joined into even bigger vectors.
 It's not truly hanging — it's just struggling with memory allocation and massive string manipulation.
  */
 vector<string> memoized(int n, unordered_map<int, vector<string>>& memo) {
@@ -109,7 +94,7 @@ int main() {
     cout << "Enter number of stairs: ";
     int s;
     cin >> s;
-    //vector<string> result = findStairPaths(s);
+    findStairPaths(s, "");
     //unordered_map<int, vector<string>> memo;
     //vector<string> result = memoized(s, memo);
     //cout << "Ways to come down " << s << " stairs with 1 or 2 or 3 steps\n";
@@ -119,8 +104,8 @@ int main() {
    // cout << "Function calls: " << callCount << endl;
 
     //int c = nonMemorizedVersion(s);
-    unordered_map<int, long long> memo;
-    long long c = memoizedVersion(s, memo);
-    cout << "total paths: " << c << endl;
+   // unordered_map<int, long long> memo;
+   // long long c = memoizedVersion(s, memo);
+   // cout << "total paths: " << c << endl;
     return 0;
 }
