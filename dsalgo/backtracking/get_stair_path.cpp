@@ -13,7 +13,6 @@ O(3ⁿ * n)
 using namespace std;
 int callCount = 0;
 
-// is it backtracking?
 void findStairPaths(int n, string psf) {
 
    callCount++; 
