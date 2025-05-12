@@ -5,6 +5,8 @@
 using namespace std;
 
 /*
+arrT[i] becomes arr[arr[i]].
+
 TC: O(n)
 SC: O(1)
 Each number is between 0 and n-1 (inclusive), meaning they're all valid indices.
@@ -32,12 +34,14 @@ void rearrangeArray(int arr [], int n) {
 }
 
 
+
 int main() {
 
-    int arr[] = {4,0,2,1,3};
-   rearrangeArray(arr, 5);
-  for(int i=0;i<5;i++) {
+    int arr[] = {3,2,0,1};
+   rearrangeArray(arr, 4);
+  for(int i=0;i<4;i++) {
     cout << arr[i] << " ";
   }
+  cout << endl;
     return 0;
 }
