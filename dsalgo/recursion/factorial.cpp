@@ -11,7 +11,7 @@ Hence, space complexity is O(n) (due to recursion_backtracking).
 
  */
 int factorial(int num) {
-    if(num == 1) return 1;
+    if(num == 0) return 1; // num == 0 must be it otherwise it will fail for num = 0 else we will get segmentation fault if num == 1
     else return num * factorial(num -1);
 }
 
