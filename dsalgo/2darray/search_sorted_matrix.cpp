@@ -22,6 +22,7 @@ bool stairCaseSearch(vector<vector<int>>& matrix, int target) {
     }
     return false;
 }
+
 bool binarySearch(int i, int low, int high, int target, const vector<vector<int>> & matrix) {
     while(low <= high) {
         int mid = low + (high - low) / 2;

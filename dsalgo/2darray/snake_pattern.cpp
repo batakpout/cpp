@@ -8,6 +8,8 @@ Snake pattern:
  78 →  19 →  35 →  91
  43 ←  8 ←  62 ←   4
  */
+
+
 void snakePattern(vector<vector<int>> & matrix) {
     int rows = matrix.size();
     int cols = matrix[0].size();
@@ -24,6 +26,7 @@ void snakePattern(vector<vector<int>> & matrix) {
         cout << endl;
     }
 }
+
 int main() {
 vector<vector<int>> arr = {
         {12, 45, 23, 67},

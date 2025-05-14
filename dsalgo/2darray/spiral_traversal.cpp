@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-//TC: O(r + c) ==> 2r + 2c
+//TC: O(2r + 2c) ==> O(r+c)
 void spiralTraversal(int arr[][6], int rows, int cols) {  // Must specify column size 
 
     int total = rows * cols;
