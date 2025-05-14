@@ -10,7 +10,7 @@ Recursive Fibonacci with O(2^n) time complexity.
     - 4 calls at next level
     - Forms a geometric progression (GP) ~ 2^n total calls
  */
-int fibo(int n) {
+int fibo(int n) { // n>=0
     if (n == 0 || n == 1) {
         return n;
     }
