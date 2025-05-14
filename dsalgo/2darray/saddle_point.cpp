@@ -19,9 +19,12 @@ void saddlePoint(vector<vector<int>> & arr) {
         }
         bool flag = true;
         int k=0;
-        while(k<arr[i].size()) {
-            if(arr[k][i] > arr[i][sv]) flag = false;
-         k++;
+        while(k<n) {
+            if(arr[k][sv] > arr[i][sv]) {
+                flag = false;
+                break;
+            }
+                k++;
          }
         if(flag) {
             cout << "saddle-point: " << i << "," << sv << endl; 
