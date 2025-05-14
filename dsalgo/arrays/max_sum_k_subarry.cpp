@@ -20,7 +20,7 @@ int maxSumKSubArrays(vector<int> &v, int k) {
     return maxSum;
 }
 
-//O(N)
+//O(N) sliding window technique
 int maxSumKArray(vector<int> &v, int k) {
     int n = v.size();
     if(n < k) return -1;
