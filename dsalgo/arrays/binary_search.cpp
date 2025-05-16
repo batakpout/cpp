@@ -44,6 +44,8 @@ void inbuildBinarySearchFunctions() {
 void upperBound() {
 
   /**
+   *  lower_bound: >= value
+      upper_bound: > value
    * upper_bound: Returns an iterator pointing to the first element in the range [begin, end) that is greater than (>) the given value.
    * :: (scope resolution operator) tells the compiler to look inside the vector<int> type for the definition of iterator.
    * upper1, it's like printing a memory address (or an iterator position), which isn’t useful on its own.
@@ -72,8 +74,6 @@ void upperBound() {
 }
 /**
  Returns an iterator pointing to the first element in the range [begin, end) that is not less than (>=) the given value.
- lower_bound: >= value
- upper_bound: > value
  */
 
 void lowerBound() {
@@ -84,9 +84,9 @@ void lowerBound() {
     cout << "\n"; 
 
     vector<int>:: iterator lower1, lower2, lower3, lower4; //
-    lower1 = lower_bound(v.begin(), v.end(), 35);
-    lower2 = lower_bound(v.begin(), v.end(), 40);
-    lower3 = lower_bound(v.begin(), v.end(), 10); // returns end iterator
+    lower1 = lower_bound(v.begin(), v.end(), 35); // output 40
+    lower2 = lower_bound(v.begin(), v.end(), 40);//output 40
+    lower3 = lower_bound(v.begin(), v.end(), 10); // returns 10
     lower4 = lower_bound(v.begin(), v.end(), 60); //for 60 gives end iterator
 
     cout << "lower bound of 35: " << *lower1 << endl;
