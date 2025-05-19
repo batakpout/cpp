@@ -10,9 +10,8 @@
   - gives basic idea for heap sort, it's just that heap sort uses heap DS to optimize selection sort.
   - in-place [it does not require extra memory for sorting]
   - Simple and easy to understand, Works well with small datasets.  
-  => it is not stable [means the order of same elements change when we sort] stable 
+  => it is not stable [means the order of same elements change when we sort]  
      e.g[90,12,34,55,90,2] now in first iteration 90 swaps with 2 and come to the end,even though its position was before the other 90, now it will remain after that 90 so it changed the order of the same element, hence it is no stable sort.   
-    selection sort ????
   =>   Does not work well on large datasets.
  */
 #include<iostream>
@@ -48,10 +47,10 @@ void stableSelectionSort(vector<int> & arr) {
         }
         if(minIndex != i) {
             int minValue = arr[minIndex];
-            for(int k=minIndex;k>0;k--) {
+            for(int k=minIndex;k>i;k--) {
                 arr[k] = arr[k-1];
             }
-            arr[i] = arr[minIndex];
+            arr[i] = minValue;
         }
     }
 }
