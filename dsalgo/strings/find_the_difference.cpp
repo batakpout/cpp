@@ -5,4 +5,19 @@ Return the letter that was added to t.
 Example:
 Input: s = "abcd", t = "abcde" Output: "e"
 Explanation: 'e' is the letter that was added.
+Approaches:
+sorting, hashtable, strings, bit manipulation
 */
+
+void usingSorting(string s, string t) {
+    sort(s.begin(), s.end());
+    sort(t.begin(), t.end());
+
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] != t[i]) {
+            cout << "Extra character is: " << t[i] << endl;
+            return;
+        }
+    }
+    cout << "Extra character is: " << t.back() << endl;
+}
