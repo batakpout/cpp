@@ -1,8 +1,7 @@
 /**
-  - key idea: repeatedly find the minimum element from the
-    unsorted part and putting it at the begining.
+  - key idea: repeatedly find the minimum element from the unsorted part and putting it at the begining.
   - O(n^2) in all the cases.
-  - inner j loop runs: (n−1)+(n−2)+⋯+2+1= [n * (n−1)​]/2
+  - inner j loop runs maximum no of time so it runs: (n−1)+(n−2)+⋯+2+1= [n * (n−1)​]/2
   - Does less memory writes compared to quick, merge, insertion sort etc
     but cycle-sort is optimal in terms of memory writes.
     e.g in EEP ROM, writes are expensive
