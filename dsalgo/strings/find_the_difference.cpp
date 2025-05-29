@@ -8,16 +8,79 @@ Explanation: 'e' is the letter that was added.
 Approaches:
 sorting, hashtable, strings, bit manipulation
 */
+#include<iostream>
+using namespace std;
 
-void usingSorting(string s, string t) {
+//Approach-1 (using map)
+//T.C : Linear
+//S.C : Extra space map
+char usingMap(string s, string t) {
+    unordered_map<char, int>m;
+    for(char &ch: s) {
+        m[ch]++;
+    }
+    for(char &ch: t) {
+        m[ch]--;
+        if(m[ch] < 0) return ch;
+    }
+    return 'a'; //this will never execute
+}
+
+//Approach-2 (Using Sum Difference)
+//T.C : Linear
+//S.C : constant
+char usingSum(string s, string t) {
+    int sum = 0;
+    for(char &ch: t) {
+        sum += ch;
+    }
+
+    for(char &ch: s) {
+        sum -= ch;
+    }
+    return (char)sum;
+
+}
+
+//Approach-3 (xor)
+//T.C : Linear
+//S.C : constant
+
+char usingXOR(string s, string t) {
+    int XOR = 0;
+    for(char &ch: t) {
+        XOR ^= ch;
+    }
+
+    for(char &ch: s) {
+        XOR ^= ch;
+    }
+    return (char)XOR;
+
+}
+
+//Approach-4 (sorting)
+//T.C : O(n log n)
+//S.C : constant
+char usingSorting(string s, string t) {
     sort(s.begin(), s.end());
     sort(t.begin(), t.end());
-
-    for (int i = 0; i < s.length(); i++) {
-        if (s[i] != t[i]) {
-            cout << "Extra character is: " << t[i] << endl;
-            return;
-        }
+    for(int i=0;i<s.length();i++) {
+        if(s[i] != t[i]) return t[i];
     }
-    cout << "Extra character is: " << t.back() << endl;
+    return t.back();
+}
+//abc abcd
+
+int main() {
+    string s = "abcd";
+    string t = "abcde";
+    char r1 = usingSum(s, t);
+    char r2 = usingMap(s, t);
+    char r3 = usingXOR(s, t);
+    char r4 = usingSorting(s, t);
+    cout << "r1 " << r1 << endl;
+    cout << "r2 " << r2 << endl;
+    cout << "r3 " << r3 << endl;
+    cout << "r4 " << r4 << endl;
 }
