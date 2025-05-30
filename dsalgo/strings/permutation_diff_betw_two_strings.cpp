@@ -1,4 +1,6 @@
 /**
+LC: E: 3146. Permutation Difference between Two Strings
+
 * Example 1: Input: s = "abc", t = "bac",the permutation difference between s and t is equal to |0 - 1| + |1 - 0| + |2 - 2| = 2.
 * Example 2:Input: s = "abcde", t = "edbac" Output: 12, permutation difference between s and t is equal to |0 - 3| + |1 - 2| + |2 - 4| + |3 - 1| + |4 - 0| = 12.
 
