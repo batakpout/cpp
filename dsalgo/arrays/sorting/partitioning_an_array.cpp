@@ -2,8 +2,8 @@
 #include<sstream>
 using namespace std;
 
-
-//SC: O(1), TC: O(N) doesn't place pivot element in correct place for numbers [can be used to separate even/odd, 1's and 0's, 0's and Non zeros]
+//other flavors:  [separate even/odd, 1's and 0's, 0's and Non zeros]
+//SC: O(1), TC: O(N) doesn't place pivot element in correct place for numbers
 void partitionEvenOdd(vector<int>& arr) {
     int n = arr.size();
     int i = 0, j = 0;
