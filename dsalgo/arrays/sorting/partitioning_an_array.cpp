@@ -7,9 +7,9 @@ using namespace std;
 void partitionEvenOdd(vector<int>& arr) {
     int n = arr.size();
     int i = 0, j = 0;
-
+    //int pivot: either passed or decided
     while (i < n) {
-        if (arr[i] % 2 == 0) {  // check if even
+        if (arr[i] % 2 == 0) {  // arr[i] > pivot
             swap(arr[i], arr[j]);
             j++;
         }
