@@ -1,10 +1,19 @@
   #include<iostream>
  using namespace std;
+ /*
+ matrix is square always
+    transpose → O(n²)
+    reverse each row → O(n²)
+Total Time Complexity: O(n²)
+Space Complexity: O(1) (in-place; no extra space except variables)
+
+ */
  void transpose(vector<vector<int>>& mat, int n) {
         
         for(int i=0;i<n;i++) {
             for(int j=i+1;j<n;j++) {
-                swap(mat[i][j], mat[j][i]);
+                if(i != j)
+                    swap(mat[i][j], mat[j][i]);
             }
         }
         
