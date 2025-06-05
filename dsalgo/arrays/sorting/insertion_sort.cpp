@@ -6,6 +6,8 @@
 * In place and stable 
 * used in practise for small array, most compilers use hybrid sort e.g TimSort(uses insertion sort
   for smaller array and merge for larger, IntroSort uses quick+heap sort for large arr and insertion sort for smaller ones)
+* Considered best when we have to sort the smaller number of elements.
+
  */
 #include<iostream>
 #include<sstream>
