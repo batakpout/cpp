@@ -4,6 +4,7 @@
  * Best: O(n)[if the array is already sorted else ] Average: O(n^2) Worst: O(n^2)
  * in-place and stable sorting algorithm
  * comparison-based sorting algoriths limit the efficiency of algorithms in certain cases
+ * cocktail sort is better version of bubble sort, it traverses from both the sides
  */
 #include<iostream>
 #include<sstream>
