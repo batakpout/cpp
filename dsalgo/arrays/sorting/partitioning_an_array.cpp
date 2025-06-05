@@ -44,6 +44,7 @@ void partitionNaive(vector<int> & arr, int l, int h, int p) {
 }
 
 /*
+ *lomuto partition
  *not stable but will put pivot at it's correct place and return its index
  * TC: O(N), single iteration of arr
  * SC: O(1)
@@ -65,6 +66,7 @@ int lomutoPartition(vector<int> & arr, int l, int h) {
 }
 
 /*
+ *Hoares partition
  * TC: O(N) SC: O(1)
  * doesn't place pivot at its correct position
  * returns index of last smallest element before greater element

@@ -33,7 +33,7 @@ void selectionSort(vector<int> &arr) {
 /*
  - stable selection sort
  - replacing swaps with shifts
- - TC: O(n^2) also performs shifts, which take O(n) in the worst case, so O(n^2) + O(n)
+ - TC: O(n^2) but also performs shifts, which take O(n) in the worst case, so O(n^2) + O(n)
 */
 void stableSelectionSort(vector<int> & arr) {
     int minIndex;

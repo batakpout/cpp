@@ -1,6 +1,7 @@
 /**
- * comparison-based like selection sort, but they differ in how they sort elements. Bubble Sort swaps adjacent elements, so the largest unsorted element "bubbles up" to its correct position. while Selection Sort minimizes swaps by selecting the right element in each pass.
- *  O(n^2) ,  inner j loop runs maximum no of time so it runs: (n−1)+(n−2)+⋯+2+1= [n * (n−1)​]/2
+ * comparison-based like selection sort, but they differ in how they sort elements. Bubble Sort swaps adjacent elements,
+    so the largest unsorted element "bubbles up" to its correct position. while Selection Sort minimizes swaps by selecting the right element in each pass.
+ *  O(n^2) ,  inner j loop runs maximum no of time so it runs: (n−1)+(n−2)+⋯+2+1= [n * (n−1)/2]
  * Best: O(n)[if the array is already sorted else ] Average: O(n^2) Worst: O(n^2)
  * in-place and stable sorting algorithm
  * comparison-based sorting algoriths limit the efficiency of algorithms in certain cases
